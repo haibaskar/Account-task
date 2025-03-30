@@ -9,5 +9,6 @@ Laravel version 10.10
 2. Create a database in MySQL
 3. Add the database name in the ENV file
 4. Run the migration command - (php artisan migrate)
-5. Check the API in Postman
-6. I have used the sanctum token, so once you are done logging in, pass the token in the header
+5. You can find the Task-Accounts.postman_collection.json file and import this JSON in Postman 
+6. All the API will work fine.
+7. I have used the sanctum token, so once you are done logging in, pass the token in the header
