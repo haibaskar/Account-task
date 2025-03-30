@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "cd78d241-6e04-4f72-b564-07ae0ea6cfc2",
+		"name": "Task-Accounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42156618",
+		"_collection_link": "https://universal-robot-520991.postman.co/workspace/New-Team-Workspace~b3aa7766-4db2-46b3-bb96-406087209b0f/collection/42224055-cd78d241-6e04-4f72-b564-07ae0ea6cfc2?action=share&source=collection_link&creator=42156618"
+	},
+	"item": [
+		{
+			"name": "accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account_name",
+							"value": "Raji",
+							"type": "text"
+						},
+						{
+							"key": "account_type",
+							"value": "Personal",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "USD",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "basky",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/accounts",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account_number",
+							"value": "4111510808",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "basky",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|CKqeMvnE34e4VMpoG6huzAateP94GI0tjQQ5UC2k6a383ccb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/my-profile",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"my-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|CKqeMvnE34e4VMpoG6huzAateP94GI0tjQQ5UC2k6a383ccb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 8|a03YOIIMJmdJtX1E8hV2v7SkVBpziBrGxb1Hh00c2a0f070b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"account_name\":\"Vimal\",\r\n   \"account_type\":\"Business\",\r\n    \"currency\":\"EUR\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/accounts/1047859986",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"accounts",
+						"1047859986"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|UjjyRil9EIqVRYZgImE0BOERq7ensseSQIuIjNfT409712f4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/account-app/api/accounts/1047859986",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"account-app",
+						"api",
+						"accounts",
+						"1047859986"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|LKbbA39rjf45sOORzPyiOsV4m1iLKfDZf0QCARHu18bf11a0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account_id\":\"2547740353\",\r\n    \"from\":\"2025-03-29\",\r\n    \"to\":\"2025-03-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/transactions",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions-Credit-Or-Debit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|LKbbA39rjf45sOORzPyiOsV4m1iLKfDZf0QCARHu18bf11a0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account_id\":\"4a8e79f5-116c-45c0-b793-5dd86c0e599a\",\r\n    \"type\":\"Credit\",\r\n    \"amount\":\"500\",\r\n    \"description\":\"Amount add\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/transactions",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|aoqYKw9JY2lLlss8XZCMsMMVgxIkgp7fQ0nqVqPU5ffc87e6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/logout",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
