@@ -1,8 +1,8 @@
 
 ## About Task
 Developed a simple RESTful API to manage accounts and transactions.
-PHP version 8.1
-Laravel version 10.10
+#PHP version 8.1
+#Laravel version 10.10
 
 #Install on local host
 1. Download files
